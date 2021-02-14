@@ -1,12 +1,24 @@
 package processor
 
+import java.util.Scanner
+
 fun main() {
-    val matrix1 = Matrix.readMatrix()
-    matrix1.printMatrix()
+    val scan = Scanner(System.`in`)
+    val matrix1 = readMatrix()
+    val scalar = scan.nextInt()
+    (matrix1 * scalar).printMatrix()
 
-    val matrix2 = Matrix.readMatrix()
-    matrix2.printMatrix()
+//    matrix1.printMatrix()
 
-    val addMatrix = matrix1 + matrix2
-    addMatrix.printMatrix()
+//    val matrix2 = Matrix.readMatrix()
+//    matrix2.printMatrix()
+
+//    try {
+//        val addMatrix = matrix1 + matrix2
+//        addMatrix.printMatrix()
+//        addMatrix * 3
+//        addMatrix.printMatrix()
+//    } catch (e: IllegalArgumentException) {
+//        println("ERROR")
+//    }
 }
