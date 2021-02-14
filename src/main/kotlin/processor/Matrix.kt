@@ -41,13 +41,27 @@ class Matrix(var rows: Int, var columns: Int) {
         return scaledMatrix
     }
 
+    operator fun times(other: Matrix): Matrix {
+        val multipliedMatrix = Matrix(other.rows, columns)
+        for (i in matrix.indices) {
+            for (j in other.matrix[i].indices) {
+                for (k in matrix[i].indices) {
+                    multipliedMatrix.matrix[i][j] += matrix[i][k] * other.matrix[k][j]
+                }
+            }
+        }
+        return multipliedMatrix
+    }
+
     private fun isSameSize(other: Matrix): Boolean = rows == other.rows && columns == other.columns
 }
 
 fun readMatrix(): Matrix {
+    println("Enter size of first matrix: ")
     val rows = scan.nextInt()
     val columns = scan.nextInt()
     val matrix = Matrix(rows, columns)
+
     matrix.setUserMatrix()
     return matrix
 }
