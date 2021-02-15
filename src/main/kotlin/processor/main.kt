@@ -3,11 +3,12 @@ package processor
 import java.util.Scanner
 
 fun main() {
-    val scan = Scanner(System.`in`)
-    val matrix1 = readMatrix()
+    run()
+//    val scan = Scanner(System.`in`)
+//    val matrix1 = readMatrix()
 //    val scalar = scan.nextInt()
-    val matrix2 = readMatrix()
-    (matrix1 * matrix2).printMatrix()
+//    val matrix2 = readMatrix()
+//    (matrix1 * matrix2).printMatrix()
 
 //    matrix1.printMatrix()
 
