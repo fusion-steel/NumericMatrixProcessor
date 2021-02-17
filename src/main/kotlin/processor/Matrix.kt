@@ -4,12 +4,12 @@ import java.util.Scanner
 private val scan = Scanner(System.`in`)
 
 class Matrix(var rows: Int, var columns: Int) {
-    private val matrix = Array(rows) { Array(columns) {0} }
+    private val matrix = Array(rows) { Array(columns) {0.0} }
 
     internal fun setUserMatrix() {
         for (i in matrix.indices) {
             for (j in matrix[i].indices) {
-                matrix[i][j] = scan.nextInt()
+                matrix[i][j] = scan.next().toDouble()
             }
         }
     }
@@ -32,7 +32,7 @@ class Matrix(var rows: Int, var columns: Int) {
         return plusMatrix
     }
 
-    operator fun times(scalar: Int): Matrix {
+    operator fun times(scalar: Double): Matrix {
         val scaledMatrix = Matrix(rows, columns)
         matrix.forEachIndexed { i, rows ->
             rows.forEachIndexed { j, _ ->
@@ -57,11 +57,9 @@ class Matrix(var rows: Int, var columns: Int) {
 }
 
 fun readMatrix(): Matrix {
-    println("Enter size of first matrix: ")
     val rows = scan.nextInt()
     val columns = scan.nextInt()
     val matrix = Matrix(rows, columns)
-
     matrix.setUserMatrix()
     return matrix
 }
